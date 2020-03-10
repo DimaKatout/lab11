@@ -1,5 +1,6 @@
 'use strict'
 var shapes=[];
+var randomNumm=[];
 var names=['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulhu','dog-duck','dragon','pen','pet-sweep','scissors','shark','sweep','tauntaun','unicom','usb','water-can','wine-glass'];
 var leftImage=document.querySelector('#leftImage');
 var midlleImage=document.querySelector('#middleImage');
@@ -33,15 +34,22 @@ for(var i=0;i<names.length;i++){
 }
 
 var leftShape,middleShape,rightShape;
+
 function render(){
-    leftShape=shapes[randomNumber(0,shapes.length-1)];
+
+     randomNumm=threeRandomNum(0,shapes.length-1);
+
+    console.log('randomNumm',randomNumm)
+    leftShape=shapes[randomNumm[0]];
+    //leftShape=shapes[random];
+
     console.log ('leftShape',leftShape);
-    middleShape=shapes[randomNumber(0,shapes.length-1)];
+   // while(middleShape===leftShape||middleShape===rightShape){}
+    middleShape=shapes[randomNumm[1]];
     console.log ('middleShape',middleShape);
 
-    rightShape=shapes[randomNumber(0,shapes.length-1)];
+    rightShape=shapes[randomNumm[2]];
     console.log ('rightShape',rightShape);
-
 
 
     leftImage.setAttribute('src',leftShape.imagePath);
@@ -116,3 +124,11 @@ function handleClickOnShape(event){
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  function threeRandomNum(min, max) {
+    var n = [];
+    for(var i=0;i<3;i++){
+    n.push(randomNumber(min,max));
+    }
+    return n;
+    }
