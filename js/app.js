@@ -101,15 +101,15 @@ function handleClickOnShape(event){
 
   function render2(){
       var ulEl=document.getElementById('summary');
-      for(var i=0;i<AbortController.length;i++){
+      for(var i=0;i<shapes.length;i++){
           var liEl=document.createElement('li');
-          liEl.textContent=`${all[i].name} has ${all[i].clicks} clicks and ${all[i].views} views `;
+          liEl.textContent=`${shapes[i].name} has ${shapes[i].clicks} clicks and ${shapes[i].views} views `;
           ulEl.appendChild(liEl);
-
-
+          console.log('my list ',ulEl)
 
 
       }
+      
 
   }
 
