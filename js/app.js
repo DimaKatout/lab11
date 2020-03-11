@@ -122,13 +122,27 @@ function handleClickOnShape(event){
   }
 
   function randomNumber(min, max) {
+     
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   function threeRandomNum(min, max) {
+    
     var n = [];
+   
     for(var i=0;i<3;i++){
-    n.push(randomNumber(min,max));
+    n.push(randomNumber(min,max));}
+    
+    while(n[0]===n[1]||n[0]===n[2]||n[1]===n[2]){
+        n=[];
+        for(var i=0;i<3;i++){
+            n.push(randomNumber(min,max));}
+
+
     }
+    
+    
+    
+
     return n;
     }
